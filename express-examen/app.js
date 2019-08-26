@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
     res.redirect('/list')
  })
  
- // List all products
+ // List all overtredingen
  app.get('/list', (req, res) => {
    db.collection('overtredingen').find().toArray((err, result) => {
      if (err) return console.log(err)
@@ -48,3 +48,17 @@ app.post('/search', (req, res) => {
        res.render('search_result.ejs', { overtredingen: result })
  });
 })
+
+// Find overtreding
+app.post('/search-snelheid', (req, res) => {
+ var query = { aantal_overtredingen_snelheid : {$gt: parseInt(req.body.snelheid) - 1} }
+ db.collection('overtredingen').find(query).toArray(function(err, result) {
+   
+  if (err) return console.log(err)
+    if (result == '')
+       res.render('search_not_found.ejs', {})
+    else
+       res.render('search_result.ejs', { overtredingen: result })
+ });
+})
+
