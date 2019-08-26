@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
  
  // List all overtredingen
  app.get('/list', (req, res) => {
-   db.collection('overtredingen').find().toArray((err, result) => {
+   db.collection('overtredingen').find().sort({datum_vaststelling: 1, opnameplaats_straat: 1}).toArray((err, result) => {
      if (err) return console.log(err)
      res.render('list.ejs', { overtredingen: result })
    })
