@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Products</title>
+  <!-- <link rel='stylesheet' href='css/bootstrap.min.css'> -->
+</head>
+<body>
+  <h2>Result</h2>
+  
+  <a href='/list'>Terugkeren</a>
+
+  <ul>
+    <% for(var i=0; i < overtredingen.length; i++) {%>
+      <li>
+        <%= overtredingen[i].datum_vaststelling %> -
+        <%= overtredingen[i].opnameplaats_straat %> -
+        <%= overtredingen[i].aantal_overtredingen_snelheid %> -
+        <%= overtredingen[i].aantal_overtredingen_roodlicht %> 
+      </li>
+    <% } %>
+    </ul>
+
+</body>
+</html>
