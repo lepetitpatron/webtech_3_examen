@@ -1,0 +1,15 @@
+<div>
+    <h2>Zoeken op Opnameplaats/Straat</h2>
+    <form #straatForm='ngForm' (ngSubmit)='straatSubmit(straatForm.value)'>
+        <input ngModel name='straat' #straat='ngModel' type='text' />
+        <input style='margin-left: 10px;' type='submit' value='zoek'/>
+    </form>
+
+    <h2>Zoeken op minimum aantal overtredingen</h2>
+    <form>
+        <input type='text' />
+        <input style='margin-left: 10px;' type='submit' value='zoek'/>
+    </form>
+    <br>
+    <a href='#' routerLink='/list'>Alle overtredingen</a>
+</div>

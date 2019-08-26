@@ -1,0 +1,17 @@
+<div>
+    <h2>Alle overtredingen</h2>
+
+    <a href='#' routerLink=''>Terugkeren</a>
+
+    <ul>
+        <li *ngFor='let o of overtredingen'>
+            {{o.datum_vaststelling}}
+            -
+            {{o.opnameplaats_straat}}
+            -
+            {{o.aantal_overtredingen_snelheid}}
+            -
+            {{o.aantal_overtredingen_snelheid}}
+        </li>
+    </ul>
+</div>
