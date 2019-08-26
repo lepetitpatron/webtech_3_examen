@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OvertredingenService } from 'src/app/services/overtredingen.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -9,15 +9,16 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   search:string;
-  overtredingen:any;
 
-  constructor(private route: ActivatedRoute, private overtredingenService:OvertredingenService) { }
+  constructor(private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit() 
   {
     this.search = this.route.snapshot.paramMap.get('query');
-    this.overtredingenService.getOvertredingen().subscribe(data => {
-      this.overtredingen = data;
-    });
+  }
+
+  onSubmit(value: any)
+  {
+    this.router.navigateByUrl('/result/'+value.straat);
   }
 }

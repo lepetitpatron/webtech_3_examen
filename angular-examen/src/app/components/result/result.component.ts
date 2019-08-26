@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { OvertredingenService } from 'src/app/services/overtredingen.service';
+import { filter } from 'minimatch';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-result',
@@ -6,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultComponent implements OnInit {
 
-  constructor() { }
+  query:string;
+  overtredingen:any[];
 
-  ngOnInit() {
+  constructor(private route:ActivatedRoute,private overtredingenService:OvertredingenService) { }
+
+  ngOnInit() 
+  {
+    this.query = this.route.snapshot.paramMap.get('title'); 
+
+    
   }
-
 }

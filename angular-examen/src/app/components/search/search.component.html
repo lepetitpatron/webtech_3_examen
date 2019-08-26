@@ -1,6 +1,6 @@
 <div>
     <h2>Zoeken op Opnameplaats/Straat</h2>
-    <form #straatForm='ngForm' (ngSubmit)='straatSubmit(straatForm.value)'>
+    <form #straatForm='ngForm' (ngSubmit)='onSubmit(straatForm.value)'>
         <input ngModel name='straat' #straat='ngModel' type='text' />
         <input style='margin-left: 10px;' type='submit' value='zoek'/>
     </form>

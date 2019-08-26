@@ -4,7 +4,7 @@
     <a href='#' routerLink=''>Terugkeren</a>
 
     <ul>
-        <li *ngFor='let o of overtredingen'>
+        <li *ngFor='let o of overtredingen | orderBy: datum_vaststelling : true'>
             {{o.datum_vaststelling}}
             -
             {{o.opnameplaats_straat}}

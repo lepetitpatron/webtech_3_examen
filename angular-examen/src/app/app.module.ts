@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ResultComponent } from './components/result/result.component';
 import { ListComponent } from './components/list/list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    OrderModule,
     RouterModule.forChild([
       {path: '', component: SearchComponent},
       {path: 'list', component: ListComponent},
-      {path: 'result:query', component: ResultComponent}
+      {path: 'result/:query', component: ResultComponent}
     ])
   ],
   providers: [],

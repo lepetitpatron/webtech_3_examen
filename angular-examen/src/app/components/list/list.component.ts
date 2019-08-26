@@ -17,5 +17,4 @@ export class ListComponent implements OnInit {
       this.overtredingen = data;
     });
   }
-
 }
